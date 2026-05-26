@@ -37,11 +37,11 @@ It replaces the default AI behavior of producing generic SaaS templates with the
 
 ## Before and After
 
-### Guardrail (Developer Security Tool)
+### Tempo (Async Video Messaging)
 
 <table><tr>
-<td valign="top" width="50%"><strong>Without skill</strong><br><img src="screenshots/guardrail-without.png" width="100%" /></td>
-<td valign="top" width="50%"><strong>With /looks-expensive</strong><br><img src="screenshots/guardrail-with.png" width="100%" /></td>
+<td valign="top" width="50%"><strong>Without skill</strong><br><img src="screenshots/tempo-without.png" width="100%" /></td>
+<td valign="top" width="50%"><strong>With /looks-expensive</strong><br><img src="screenshots/tempo-with.png" width="100%" /></td>
 </tr></table>
 
 ### Vault (Cloud Security Platform)
@@ -51,14 +51,7 @@ It replaces the default AI behavior of producing generic SaaS templates with the
 <td valign="top" width="50%"><strong>With /looks-expensive</strong><br><img src="screenshots/vault-with.png" width="100%" /></td>
 </tr></table>
 
-### Tempo (Async Video Messaging)
-
-<table><tr>
-<td valign="top" width="50%"><strong>Without skill</strong><br><img src="screenshots/tempo-without.png" width="100%" /></td>
-<td valign="top" width="50%"><strong>With /looks-expensive</strong><br><img src="screenshots/tempo-with.png" width="100%" /></td>
-</tr></table>
-
-### More examples
+### More desings using the skill
 
 <table><tr>
 <td valign="top" width="50%"><strong>Hale & Co</strong> (boutique real estate)<br><img src="screenshots/hale-1.png" width="100%" /></td>
