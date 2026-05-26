@@ -51,7 +51,7 @@ It replaces the default AI behavior of producing generic SaaS templates with the
 <td valign="top" width="50%"><strong>With /looks-expensive</strong><br><img src="screenshots/vault-with.png" width="100%" /></td>
 </tr></table>
 
-### More desings using the skill
+### More designs using the skill
 
 <table><tr>
 <td valign="top" width="50%"><strong>Hale & Co</strong> (boutique real estate)<br><img src="screenshots/hale-1.png" width="100%" /></td>
