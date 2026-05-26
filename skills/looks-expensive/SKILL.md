@@ -1,12 +1,12 @@
 ---
 name: looks-expensive
-version: 2.0.0
+version: 3.0.0
 description: |
   Full-stack design methodology that makes any website look like a $150k agency build.
   Nine gated phases: positioning, research, design contract, screen spec, build,
   subtraction, audit, hardening, handoff. Includes illustration system, animation
   tiers, 12 hero patterns, 15 section layouts, UX writing guide, icon system, and
-  27+ anti-pattern rules. One skill, zero external dependencies.
+  37+ anti-pattern rules. One skill, zero external dependencies.
   Trigger on: "design this", "make this look expensive", "looks expensive",
   "full design pass", "design from scratch", "premium design", "redesign this".
 user-invocable: true
@@ -31,6 +31,22 @@ triggers:
 
 # Looks Expensive
 
+## The Aesthetic North Star
+
+The target aesthetic is Linear, Eleven Labs, Mercury, Cursor, Vercel, Stripe. NOT editorial magazine. NOT vintage artisanal. NOT warm and cozy.
+
+What these products share:
+- All-sans typography. One family. Hierarchy through weight and size.
+- White or near-white backgrounds. Not cream. Not paper. White.
+- True black or near-black ink. Not warm brown.
+- One accent color that pops. Visible on buttons, links, and interactive states.
+- Clean, functional, modern. The design disappears into the content.
+- No serif display fonts. No editorial treatments. No uppercase letter-spaced eyebrows everywhere.
+
+If the output looks like a magazine or a wine label, it's wrong. It should look like a well-funded startup's real website.
+
+---
+
 Nine phases. Gated. Each phase's output gets user approval before the next begins.
 
 ---
@@ -48,16 +64,15 @@ Ask these questions. Do not proceed until answered:
 3. **Brand or Product register?**
    - Brand: design IS the product (marketing, portfolios, agency). Distinctiveness, typographic risk.
    - Product: design SERVES the product (dashboards, SaaS, tools). Earned familiarity.
-4. **The memorable thing?** One sentence that filters every decision. ("serious research software", "developer tools that feel like magic")
+4. **The memorable thing?** One sentence that filters every decision.
 5. **What are you NOT?** 3-4 anti-references.
 6. **2-3 products whose quality you want to match.**
 7. **Emotional temperature?**
-   - Cool/Technical: precision, security, dev tools, fintech (blue-blacks, cool whites, slate)
-   - Warm/Earthy: food, wellness, hospitality, agriculture (cream, olive, terracotta)
-   - Neutral/Clean: general SaaS, productivity, B2B, most agencies (true grays, pure whites, no tint)
+   - Cool/Technical: precision, security, dev tools, fintech (cool whites, slate, blue-black)
+   - Warm/Earthy: food, wellness, hospitality, agriculture (cream is allowed HERE ONLY)
+   - Neutral/Clean: general SaaS, productivity, B2B, agencies, consulting, real estate (pure white, true gray, true black)
    - Bold/High-Contrast: consumer apps, creative tools, marketplaces (pure black + white + one saturated accent)
-   - Editorial/Refined: architecture, real estate, luxury, consulting (warm grays, not cream. Stone, not paper.)
-   - Vibrant/Playful: social, education, kids, community (bright accents on white, colorful but controlled)
+   - Vibrant/Playful: social, education, community (bright accents on white)
 8. **Constraints?** Timeline, team size, existing code.
 
 ### Output
@@ -97,98 +112,91 @@ Direction label, decoration level, mood sentence, anti-references.
 
 ### Font System
 
-The font is a product decision. Not a preset.
+**THE DEFAULT IS ONE SANS-SERIF FAMILY. PERIOD.**
 
-**Temperature-to-type mapping (starting point):**
-- Cool/Technical: geometric sans, clean grotesk. Tight tracking. (Space Grotesk, Outfit, DM Sans, Instrument Sans, Geist)
-- Warm/Earthy: humanist sans or serif. Open apertures. (Bricolage Grotesque, Source Serif 4, Literata, Newsreader)
-- Neutral/Clean: neo-grotesk or humanist-geometric. (Satoshi, General Sans, Albert Sans, Sora, Plus Jakarta Sans)
-- Bold/High-Contrast: display fonts with personality. Strong weight contrast. (Cabinet Grotesk, Clash Display, Bebas Neue)
-- Editorial/Refined: transitional serif or elegant grotesk. Restrained, not decorative. (Libre Baskerville, Cormorant, Outfit, Switzer)
-- Vibrant/Playful: rounded geometric or friendly sans. (Nunito, Quicksand, Rubik, Comfortaa)
+Linear uses Inter. Eleven Labs uses a custom sans. Cursor uses a custom sans. Mercury uses a clean grotesk. Vercel uses Geist. Stripe uses a clean sans. None of them pair serif + sans. None of them use a display serif. The default is one sans family for everything.
+
+**Serif is the rare exception.** Serif is ONLY allowed when ALL of these are true:
+1. The product is food, beverage, luxury goods, or editorial publishing
+2. The user specifically named a serif-using product as a reference
+3. Sans alone genuinely cannot carry the brand
+
+If ANY condition isn't met, use all-sans. A real estate firm: sans. An agency: sans. A clinic: sans. A SaaS tool: sans. A marketplace: sans.
+
+**INTER IS BANNED AS THE DEFAULT.** Inter appeared in 8 of 11 test outputs. It is a fine font but using it on every project makes every output identical. You MUST select a different sans-serif for each project. Before choosing, list 5 candidates and pick the best match.
+
+**Font candidates (all sans-serif, search for more):**
+- Space Grotesk, Outfit, DM Sans, Instrument Sans, Geist, IBM Plex Sans
+- Satoshi, General Sans, Albert Sans, Sora, Plus Jakarta Sans, Switzer
+- Cabinet Grotesk, Manrope, Archivo, Bricolage Grotesque
+- Rubik, Nunito Sans, Source Sans 3, Libre Franklin
 
 **Selection process:**
-1. Start with temperature mapping
-2. Identify 3-4 properties needed (geometric vs humanist, tight vs open, high vs low x-height)
-3. Web search "[product type] website font" and "[reference product] font"
-4. Search Google Fonts / Fontshare for matches
-5. The selected font MUST differ from what you'd pick by default. If reaching for the same font, stop and search alternatives.
-6. One family preferred. Two max. Never three.
-
-**ANTI-REPETITION (CRITICAL):**
-Do NOT default to Inter as body font. Do NOT default to Fraunces/EB Garamond/Instrument Serif as display. Before selecting, ask: "Would this choice surprise someone who saw my last 3 outputs?" If no, find an alternative with the same properties.
+1. List 5 sans-serif candidates that match the product's personality
+2. Eliminate any font you've used recently
+3. Pick the one that best matches while being different from your default
+4. One family. Hierarchy through weight (400/500/600/700) and size. Not through mixing families.
 
 **Rules:**
-- NO italics. No `<em>`, `<i>`, `.italic`, `font-style: italic`. Ever. Unless the user literally typed "use italics." Emphasis via weight, color, or size.
+- ONE sans-serif family. Not two. Not serif + sans.
+- NO Inter unless explicitly justified in one sentence.
+- NO `.serif` class. NO `.h-display` with a different font family.
+- NO italics. No `<em>`, `<i>`, `.italic`, `font-style: italic`. Ever.
 - NO monospace unless the product displays code/IDs/data AND the user confirmed.
-- NO gradients on text unless the user asks.
-- Justify font choice in one sentence tied to the product.
 
-**Required type scale:**
+**Required type scale (one family, hierarchy through weight + size):**
 ```
-H1:      [font] [40-72px] / [weight] / [tracking] / [line-height]
-H2:      [font] [32-48px] / [weight] / [tracking] / [line-height]
-H3:      [font] [24-32px] / [weight] / [tracking] / [line-height]
-H4:      [font] [20-24px] / [weight] / [tracking] / [line-height]
-H5:      [font] [16-18px] / [weight] / [tracking] / [line-height]
-H6:      [font] [14-16px] / [weight] / [tracking] / [line-height]
-Body:    [font] [15-17px] / 400 / 0 / [1.5-1.6]
-Small:   [font] [12-14px] / 500 / [0.01em] / [1.3-1.4]
-Eyebrow: [font] [10-12px] / 500 / [0.12-0.16em] / 1.3 / uppercase
+H1:      [font] [40-72px] / [600-700] / [-0.02 to -0.03em] / [1.05-1.1]
+H2:      [font] [32-48px] / [600] / [-0.015 to -0.02em] / [1.1-1.15]
+H3:      [font] [24-32px] / [500-600] / [-0.01em] / [1.15-1.2]
+H4:      [font] [20-24px] / [500] / [0] / [1.2-1.3]
+H5:      [font] [16-18px] / [500] / [0] / [1.3-1.4]
+H6:      [font] [14-16px] / [500] / [0] / [1.4-1.5]
+Body:    [font] [15-17px] / [400] / [0] / [1.5-1.6]
+Small:   [font] [12-14px] / [500] / [0.01em] / [1.3-1.4]
+Label:   [font] [11-13px] / [500] / [0.02-0.04em] / [1.3]
 ```
+
+Labels can be uppercase but don't overuse them. Not every section needs an uppercase label above the heading. Use them sparingly for navigation context, not decoration.
 
 ### Color System
 
-**Temperature-to-palette (from Phase 1):**
+**THE DEFAULT IS WHITE BACKGROUND + BLACK TEXT. NOT CREAM + BROWN.**
 
-| Temperature | Ink | Paper | Neutral tint | Accent direction |
-|-------------|-----|-------|--------------|-----------------|
-| Cool | `#0f1114` (blue-black) | `#f7f8fa` (cool white) | Blue/slate | Blue, teal, green, violet |
-| Warm/Earthy | `#1a1714` (brown-black) | `#f5f2ec` (cream) | Amber/ochre | Terracotta, olive, burnt orange |
-| Neutral | `#111111` (true black) | `#fafafa` (true white) | None, pure gray | Any single accent |
-| Bold | `#0a0a0a` (deep black) | `#ffffff` (pure white) | None, max contrast | One saturated primary |
-| Editorial | `#1c1c1c` (charcoal) | `#f5f5f3` (warm gray, NOT cream) | Warm GRAY not brown | Muted red, deep navy, forest |
-| Vibrant | `#1a1a1a` (near-black) | `#ffffff` (pure white) | Clean, no tint | Bright, saturated, playful |
+| Temperature | Ink | Paper | Accent examples |
+|-------------|-----|-------|-----------------|
+| Cool | `#0f1114` (blue-black) | `#f8f9fa` (cool white) | Blue, teal, violet |
+| Warm/Earthy | `#1a1714` (brown-black) | `#f5f2ec` (cream) | Terracotta, olive, amber |
+| Neutral | `#111111` (true black) | `#ffffff` (white) | Any single accent |
+| Bold | `#0a0a0a` (deep black) | `#ffffff` (white) | One saturated primary |
+| Vibrant | `#1a1a1a` (near-black) | `#ffffff` (white) | Bright, saturated |
 
-Do NOT default to warm. Do NOT default to cream. Match temperature to product.
+**Cream (#f5f2ec, #f4f1ec, #f6f2ec, #ebe2c8, #e6dfd0, etc.) is ONLY for Warm/Earthy temperature.** That means ONLY food, beverage, hospitality, wellness, agriculture. Everything else gets white or near-white.
 
-**THE CREAM/BROWN TRAP (CRITICAL):**
-The #1 failure of this skill is defaulting to cream paper (`#f5f2ec`) and brown-black ink (`#1a1714`) for everything. This makes every output look identical.
+**Brown-tinted ink (#1a1715, #1c1b18, #1b1a17, #1a1614, etc.) is ONLY for Warm/Earthy.** Everything else gets true black (#111) or blue-black (#0f1114).
 
-Before selecting colors, ask:
-- Is this product ACTUALLY warm? Food, hospitality, agriculture: yes. Real estate, agencies, consulting, professional services: NO. Use Editorial (warm gray) or Neutral (true white).
-- Can you justify cream over white or gray? "It feels premium" is NOT a justification. White + a strong accent is equally premium.
-- Cream/brown is ONLY for: food, beverage, hospitality, wellness, agriculture, artisanal goods. Products where warmth is the identity, not a visual default.
-- If your last 3 outputs used cream + brown, you MUST pick a different base this time.
+If the product is NOT food/beverage/hospitality/wellness/agriculture, and you picked cream or brown-tinted ink, you are wrong. Go back and pick white + black.
 
-**ANTI-REPETITION (CRITICAL):**
-- Paper should NOT always be cream. Most products work better with white or gray.
-- Ink should NOT always be warm brown. Most products work better with true black or charcoal.
-- Accent colors derived from the product's identity, not a default palette.
-
-**Brand accent is mandatory.** Every product has a primary color. It is rarely just black and white. The accent must:
+**Brand accent is mandatory.** Every product has a primary color. It must:
 - Pop on CTAs and primary buttons
-- Appear in illustrations and icons
-- Tint interactive states (hover, focus, active)
-- Show in eyebrow pills, badges, and status indicators
-- Be visible and intentional, not buried in a hover state nobody sees
-
-The accent creates the "designed" feeling. Without it, the page looks like a grayscale wireframe.
+- Appear on links and interactive states
+- Tint at least one section background (at 4-8% opacity)
+- Be visible and intentional, not buried in a hover state
 
 Define:
 - **Brand accent** (one color, 3-5 shades: base, hover, pressed, strong, on-dark)
-- **Paper/surface tiers** (3-4 levels, temperature-matched)
-- **Dark panels** (2-3 tiers + copy + muted)
-- **Ink/text tiers** (display, body, secondary, tertiary, muted)
+- **Surface tiers** (white, off-white `#f8f9fa` or `#fafafa`, and one darker shade for section variation)
+- **Dark panels** (near-black `#111` or `#0a0a0a` for inverted sections, + light text colors)
+- **Ink/text tiers** (primary `#111`, secondary `#555` or `#666`, tertiary `#888` or `#999`)
 - **Hairlines** (rgba opacity at 0.06/0.10/0.16)
-- **Semantic** (success/warning/error/info, low-sat + high-sat)
+- **Semantic** (success/warning/error/info)
 
 **Hard rules:**
-- No one-sided colorful strokes (no border-left accent, no colored top-borders)
+- No one-sided colorful strokes
 - Borders use hairline opacity or inset shadow
 - Elevation through lightness, not heavy shadow
 - No gradients unless user asks
-- Accent color must be VISIBLE, not hidden
+- Accent color must be VISIBLE
 
 ### Spacing
 - Base unit: 4px or 8px
@@ -211,10 +219,9 @@ xl:   24px  (hero cards, major containers)
 2xl:  32px  (full-bleed containers)
 pill: 9999px (pill buttons, tags)
 ```
-No arbitrary values. Everything maps to the scale.
 
 ### Icon System
-Outlined icons only. Stroke weight 0.8-1px. Nothing heavier. Consistent sizing (16/20/24px tiers). One icon family per project. If no icon library fits, use no icons rather than mixing families.
+Outlined icons only. Stroke weight 0.8-1px. Nothing heavier. Consistent sizing (16/20/24px tiers). One icon family per project.
 
 ### Motion
 - Custom cubic-bezier only. Never `linear` or default `ease-in-out`.
@@ -224,16 +231,14 @@ Outlined icons only. Stroke weight 0.8-1px. Nothing heavier. Consistent sizing (
 
 ### Section Rhythm
 Load `reference/section-layouts.md`. Define per-section:
-- Background treatment (shade shift, dark inversion, accent tint)
+- Background treatment (white, off-white, tinted, dark)
 - Layout pattern (from 15 options, never same pattern twice in a row)
 - Density (spacious vs compact)
-- Typography scale shift
 
 Rules:
 - Never 2+ consecutive sections with same background
 - At least one dark-inverted section per page
 - At least 3 different layout patterns per page
-- Hero and final CTA get the strongest visual treatment
 
 ### UX Writing
 Load `reference/ux-writing.md`. All copy follows:
@@ -241,9 +246,9 @@ Load `reference/ux-writing.md`. All copy follows:
 - Subhead: 15-25 words / 120 chars max
 - CTA: 2-5 words / 30 chars max
 - Feature description: one sentence / 15-20 words max
-- No banned words (revolutionize, cutting-edge, leverage, seamless, robust, comprehensive, unlock potential, furthermore, indeed, moreover)
-- No section numbers ("Section 1", "01."). Eyebrows must be logical labels.
-- No dates unless the content is actually date-specific.
+- No banned words
+- No section numbers ("01.", "Section 1"). Labels only when they add navigation context.
+- No dates unless content is date-specific.
 
 ### Decisions Log
 ```
@@ -264,39 +269,25 @@ Load reference files: `reference/hero-patterns.md`, `reference/section-layouts.m
 
 1. **Route and purpose.**
 
-2. **Hero pattern selection.** Using Phase 1 positioning, select from 12 hero patterns (see reference/hero-patterns.md). The hero MUST match the product type. A dev tool gets a different hero than a coffee brand.
+2. **Hero pattern selection.** From 12 patterns in reference/hero-patterns.md.
 
-3. **Full-page section map.** Every section:
-   - Name
-   - Layout pattern (from reference/section-layouts.md, MUST vary across sections)
-   - Background treatment
-   - Content summary
-   - Illustration type (from reference/illustrations.md, if applicable)
+3. **Full-page section map.** Every section: name, layout pattern, background, content summary, illustration type (if applicable). ENTIRE page mapped before implementation.
 
-   The ENTIRE page mapped before any implementation. No piecemeal.
-
-4. **Illustration plan.** For each section, decide: does this section need a visual, or does typography carry it?
-   - Check the medium rule in reference/illustrations.md FIRST. You are building in HTML/CSS. You cannot render physical products, landscapes, or realistic objects.
-   - If the product is physical (food, consumer goods, hardware): do NOT plan illustrations of the product. Plan editorial typography treatments, abstract data representations, or styled placeholders instead.
-   - For digital products: UI mockups, code blocks, and component compositions work. Plan those.
-   - For every planned visual, specify: type, integration method, color treatment.
-   - NO fake browser chrome. NO physical product renders. NO monospace unless showing code.
-   - If a section is better served by typography alone, mark it "typography-driven, no illustration."
+4. **Illustration plan.** For each section, decide: visual or typography-driven?
+   - Check reference/illustrations.md medium rule FIRST.
+   - NEVER render physical products in HTML/CSS.
+   - For digital products: UI mockups work. For physical products: typography treatments.
+   - If a section works without illustration, mark it "typography-driven."
 
 5. **ASCII wireframe** of complete page.
 
-6. **Cognitive load check:** Nav 5 or fewer, forms 4 or fewer fields, 1 primary + max 2 secondary buttons, max 4 metrics per viewport.
+6. **Cognitive load check:** Nav 5 or fewer, forms 4 or fewer fields, 1 primary + max 2 secondary buttons.
 
-7. **Interaction state inventory:** All 8 states for every interactive element (default, hover, focus, active, disabled, loading, error, success).
+7. **Interaction state inventory:** All 8 states for every interactive element.
 
-8. **Responsive spec:**
-   | Element | 320px | 640px | 768px | 1024px | 1280px | 1536px |
-   |---------|-------|-------|-------|--------|--------|--------|
+8. **Responsive spec** at 320/640/768/1024/1280/1536.
 
-9. **Animation plan.** Load `reference/animations.md`. For each section, define:
-   - Entrance animation (scroll-triggered fade-up, staggered reveal, etc.)
-   - Interactive animations (hover states, click feedback)
-   - Which tier: Essential (required), Elevated (if time permits), Advanced (stretch)
+9. **Animation plan.** Load `reference/animations.md`. Essential tier required, Elevated/Advanced as stretch.
 
 ### Output
 Write the spec. Present. STOP. Wait for approval.
@@ -309,56 +300,49 @@ Load reference files: `reference/animations.md`, `reference/icon-system.md`, `re
 
 ### Build Rules
 
-**Color must be visible.** The accent color appears on:
-- Primary CTA buttons (filled, not outlined)
-- Hover/focus states on interactive elements
-- Eyebrow pills and badges
-- Icon accents or illustration highlights
-- At least one section's accent-tinted background
-If the page looks like a grayscale wireframe, the accent isn't working hard enough.
+**Color must be visible.** Accent on CTAs, links, hover states, at least one tinted section.
 
-**Sections must look different from each other.** Each section uses a different combination of:
-- Background shade (white, off-white, tinted, dark)
-- Layout pattern (bento, zigzag, stat strip, timeline, etc.)
-- Density (spacious hero vs compact stat strip)
-- Typography scale (display in hero vs body in features)
-Adjacent sections must differ in at least 2 of these dimensions.
+**Sections must look different.** Different background, layout, density, or type scale. At least 2 dimensions different between adjacent sections.
 
-**Illustrations must respect the medium.** Follow `reference/illustrations.md`. You are building with HTML/CSS, not Figma. NEVER attempt to render physical products (bottles, food, devices, packaging), landscapes, nature, buildings, or human figures in SVG/CSS. These always look amateur. When you can't illustrate well, lean on typography: oversized numbers, editorial pull quotes, data points as visual anchors, and generous spacing. A clean section with great type beats a section with a bad SVG every time.
+**Illustrations must respect the medium.** Follow `reference/illustrations.md`. NEVER render physical products, landscapes, or realistic objects in SVG/CSS. Typography beats bad illustration.
 
-**Animations are required, not optional.** At minimum, implement all Essential tier animations:
-- Button hover: lift + layered shadow expansion (200-300ms, custom bezier)
-- Scroll entrance: elements fade up 20-30px as they enter viewport (600ms ease-out)
-- Staggered reveals: list items, cards, features enter sequentially (50-100ms stagger)
-- Counter animation: stats count up on viewport entry (2000ms ease-out)
-- Smooth transitions on all interactive state changes (150-200ms)
+**Animations are required.** Essential tier minimum: button hover lift, scroll entrance, staggered reveals, counter animation, smooth state transitions.
 
-**No eyebrow/pill decoration spam.** Eyebrows are logical labels ("For teams", "Pricing", "How it works"). Never "Section 01", "--- Features ---", or decorative numbering.
+**No editorial patterns as defaults.** Specifically:
+- No `.serif` class unless serif was explicitly earned in Phase 3
+- No uppercase letter-spaced eyebrows on every section. Use sparingly.
+- No `.h-display` with a font different from body
+- No warm CSS variable naming (`--paper`, `--night`, `--night-copy`). Use neutral names (`--bg`, `--bg-2`, `--text`, `--text-2`, `--accent`).
+- No editorial pull quote styling unless the product is editorial
 
 ### Pre-Output Checklist
 
 Before presenting ANY screen:
+- [ ] **SERIF CHECK:** Is there a `.serif` class or a second font family? If yes and serif wasn't earned in Phase 3, REMOVE IT. Use the single sans family for everything.
+- [ ] **INTER CHECK:** Is the font Inter? If yes and it wasn't explicitly justified, CHANGE IT.
+- [ ] **CREAM CHECK:** Is the background cream/warm-tinted (#f5f2ec, #f4f1ec, etc.)? If the product is NOT food/beverage/hospitality, CHANGE TO WHITE.
+- [ ] **BROWN INK CHECK:** Is the ink warm brown (#1a1715, #1c1b18, etc.)? If the product is NOT food/beverage/hospitality, CHANGE TO TRUE BLACK.
 - [ ] **ITALIC CHECK:** Grep for `<em>`, `<i>`, `.italic`, `font-style: italic`. If found, REMOVE.
 - [ ] **MONO CHECK:** Grep for `monospace`, `mono`, `<code>`, `<pre>`. Remove unless product needs it.
 - [ ] **GRADIENT CHECK:** Grep for `gradient`. Remove unless user requested.
-- [ ] **SECTION NUMBER CHECK:** Grep for "Section", "01.", "02.", "---". Remove decorative numbering.
-- [ ] **BROWSER CHROME CHECK:** Grep for mock window buttons (red/yellow/green dots). Remove unless showing real product UI.
-- [ ] **ILLUSTRATION QUALITY CHECK:** Review every SVG and complex CSS visual. Does it look professional, or does it look like a child drew it in code? If the product is physical (food, bottle, device, clothing), did you attempt to render it? REMOVE any physical product illustrations. Use typography treatments or styled placeholders instead.
-- [ ] Font matches DESIGN.md (no ad-hoc fonts)
-- [ ] Type scale matches DESIGN.md (every element mapped)
-- [ ] Color tokens used everywhere (no raw hex outside DESIGN.md)
-- [ ] Accent color VISIBLE on CTAs, pills, icons, and at least one tinted section
-- [ ] Spacing follows scale (no arbitrary values)
-- [ ] Border radius uses the 4-32 system
+- [ ] **SECTION NUMBER CHECK:** Grep for "Section", "01.", "02.", "---". Remove.
+- [ ] **BROWSER CHROME CHECK:** Grep for mock window buttons. Remove unless showing real product UI.
+- [ ] **ILLUSTRATION QUALITY CHECK:** Review every SVG. If it looks amateur, remove and use typography.
+- [ ] **EYEBROW SPAM CHECK:** Are uppercase letter-spaced labels on every section? If more than 3 sections have them, remove the excess. They're for navigation context, not decoration.
+- [ ] Font: one sans family, hierarchy through weight + size
+- [ ] Color tokens used everywhere
+- [ ] Accent color VISIBLE on CTAs, links, at least one tinted section
+- [ ] Spacing follows scale
+- [ ] Border radius uses 4-32 system
 - [ ] All transitions use custom cubic-bezier
-- [ ] At least 3 different section layout patterns used
+- [ ] At least 3 different section layout patterns
 - [ ] No 2 consecutive sections with same background
 - [ ] At least one dark-inverted section
-- [ ] Essential animations implemented (hover lift, scroll entrance, stagger, counters)
+- [ ] Essential animations implemented
 - [ ] Icon stroke weight 0.8-1px, one family
 - [ ] Responsive at all 6 breakpoints
 - [ ] Touch targets 44px minimum
-- [ ] **VARIANCE CHECK:** Does this look like it could be from a different designer than your last output? If same palette/font/layout as before, STOP and re-derive from the product.
+- [ ] **DOES THIS LOOK LIKE LINEAR/VERCEL/STRIPE? Or does it look like a magazine?** If magazine, you went editorial. Fix it.
 
 ### Output
 Present. STOP. Wait for approval.
@@ -372,23 +356,21 @@ Strip on sight:
 - Fake metadata, doc IDs, version numbers
 - Decorative timestamps, ETAs
 - Redundant labels above clear data
-- Section numbers ("01", "02") used as decoration
+- Section numbers used as decoration
 - Decorative footers and slogans
 - Full prose where fragments work
 - Any italic text
 - Any monospace not displaying code/data
 - Any gradient not requested
-- Fake browser chrome (mac window buttons)
+- Fake browser chrome
 - Template duplication (identical layouts across sections)
+- Excessive uppercase eyebrows (keep max 2-3 per page)
 
-### AI Slop Detection (27+ patterns from reference/anti-patterns.md)
-Load `reference/anti-patterns.md`. Check against all patterns. Flag with confidence tier (Certain/Probable/Possible).
+### AI Slop Detection (37 patterns from reference/anti-patterns.md)
+Load `reference/anti-patterns.md`. Check all patterns. Flag with confidence tier.
 
 ### UX Writing Audit
-Load `reference/ux-writing.md`. Check all copy against:
-- Banned word list
-- Character limits per element
-- Generic CTA check ("Get Started" on every button = failure)
+Load `reference/ux-writing.md`. Check banned words, char limits, generic CTAs.
 
 ### Output
 List flags. Present. STOP. Wait for approval.
@@ -399,14 +381,6 @@ List flags. Present. STOP. Wait for approval.
 
 ### Responsive Verification
 Check at 375px, 768px, 1024px, 1280px, 1536px.
-- No horizontal overflow
-- Grid collapses correctly
-- Text readable, no overflow
-- Touch targets 44px
-- Nav adapts
-- No orphaned words in headings
-- Body text 65-75ch measure
-- Section padding follows responsive rubric
 
 ### Accessibility Review (WCAG AA, non-negotiable)
 | Check | Requirement |
@@ -427,19 +401,6 @@ Check at 375px, 768px, 1024px, 1280px, 1536px.
 
 Cannot score above B with critical accessibility failures.
 
-### Animation Quality Check
-- All Essential tier animations present
-- Timing feels natural (200-400ms interactions, 600-800ms entrances)
-- Custom easing, never linear
-- No janky scroll-triggered animations
-- Mobile: heavy animations disabled or simplified
-
-### Illustration Quality Check
-- Illustrations match design system (same accent, same radius, same line weight)
-- No fake browser chrome on non-product illustrations
-- No generic stock/placeholder visuals
-- Each illustration type is appropriate for its section
-
 ### Scoring (6 categories, weighted)
 | Category | Weight |
 |----------|--------|
@@ -451,7 +412,6 @@ Cannot score above B with critical accessibility failures.
 | Content & UX Writing | 15% |
 
 Letter grades: A (90-100), B (80-89), C (70-79), D (60-69), F (0-59).
-F in Accessibility or Visual Design caps overall at D.
 
 ### Output
 Audit report with scores, findings, priority fixes. Present. STOP. Wait for approval.
@@ -463,7 +423,7 @@ Audit report with scores, findings, priority fixes. Present. STOP. Wait for appr
 - Text overflow handling on every element
 - i18n: 30-40% space budget, logical properties for RTL
 - Error states: 400/401/403/404/429/500 each with specific UX
-- Empty states: editorial copy, not illustrations
+- Empty states: copy, not illustrations
 - Loading states: skeleton or spinner, never blank
 - Focus management: `:focus-visible`, trapped in modals, returned on close
 - `prefers-reduced-motion`: all animations suppressible
@@ -476,10 +436,10 @@ List fixes. Present. STOP. Wait for approval.
 
 ## Phase 9: Handoff
 
-- Design system summary (fonts, colors, spacing, radius, motion, icons)
-- Route-to-component map with parity status (Aligned/Partial/Gap)
+- Design system summary (font, colors, spacing, radius, motion, icons)
+- Route-to-component map with parity status
 - Decisions log
-- Known open items (honestly documented)
+- Known open items
 - What's working (don't touch)
 - Grep entry points
 
@@ -490,69 +450,63 @@ Write handoff. Done.
 
 ## Design Laws (Always Active)
 
+### The North Star
+The output should look like Linear, Vercel, Stripe, Mercury, Eleven Labs, or Cursor built it. Not like a magazine. Not like a wine label. Not like an editorial spread. Clean, modern, functional, premium.
+
 ### Aesthetic
-- Monochrome + one visible accent color. Accent must pop, not hide.
-- Hairline borders only. No one-sided colorful strokes.
+- Monochrome + one visible accent color.
+- White or near-white backgrounds by default. Cream ONLY for food/bev/hospitality.
+- True black or near-black ink by default. Brown ONLY for food/bev/hospitality.
+- Hairline borders only.
 - Elevation through lightness, not heavy shadow.
 - 64-120px between major sections.
-- Typography carries hierarchy. Color and border are secondary.
-- Sections must be visually distinct from each other.
-- Color temperature is product-specific. Not always warm.
 
 ### Typography
-- NO italics. Period. Unless user explicitly asks.
-- NO monospace unless product needs it AND user confirms.
-- NO gradients on text unless user asks.
-- Font choice justified in one sentence tied to product.
-- One family preferred. Two max.
-- Every element maps to defined type scale.
+- ONE sans-serif family by default. Serif only when earned.
+- NO Inter as default. Must be justified.
+- NO italics. Period.
+- NO monospace unless product needs it.
+- Hierarchy through weight and size, not font mixing.
+- Labels/eyebrows used sparingly, not on every section.
 
 ### Animation
-- Essential tier is mandatory on every page.
+- Essential tier mandatory.
 - Custom cubic-bezier. Never linear or default ease.
 - GPU-safe: transform and opacity only.
 - `prefers-reduced-motion` always respected.
-- Timing: 150-200ms hover, 400-600ms reveal, 600-800ms entrance.
 
 ### Illustration
-- 8 types available. Select based on product and section.
-- No fake browser chrome unless showing actual product UI.
-- No generic stock visuals.
-- Illustrations match design system (accent color, radius, line weight).
-- Modern, not template-looking.
+- Respect the medium. No physical product renders in HTML/CSS.
+- Typography beats bad illustration.
+- No fake browser chrome.
 
 ### Layout
 - 15 section layout patterns available. Use at least 3 per page.
-- Never same layout pattern twice in a row.
+- Never same layout twice in a row.
 - Never 2 consecutive sections with same background.
 - At least one dark section per page.
 
 ### UX Writing
-- Headline: 6-10 words. Subhead: 15-25 words. CTA: 2-5 words.
-- No banned words. No section numbers as decoration.
-- Every CTA is specific to the action. No "Get Started" on every button.
+- Short. Specific. No banned words. No generic CTAs.
+- No section numbers as decoration.
 
 ### Icons
-- Outlined. Stroke 0.8-1px. One family. 16/20/24px sizing.
+- Outlined. Stroke 0.8-1px. One family. 16/20/24px.
 
 ### Border Radius
 - 4-32 system. No arbitrary values.
-- xs(4), sm(8), md(12), lg(16), xl(24), 2xl(32), pill(9999).
 
 ### Responsive
-- Mobile-first. 6 breakpoints.
-- Audit at 375, 768, 1024, 1280, 1536.
-- Fluid typography via clamp().
-- No horizontal scroll ever.
-- `min-h-[100dvh]` not `h-screen`.
+- Mobile-first. 6 breakpoints. Fluid typography via clamp().
+- No horizontal scroll. `min-h-[100dvh]` not `h-screen`.
 
 ### Accessibility
-- WCAG AA minimum.
-- 4.5:1 body text, 3:1 large text and UI.
-- Keyboard nav on everything.
-- No info by color alone.
-- Skip link. Alt text. Heading hierarchy.
+- WCAG AA minimum. 4.5:1 body, 3:1 large text and UI.
+- Keyboard nav. Skip link. Alt text. Heading hierarchy.
 
-### Anti-Patterns (from reference/anti-patterns.md)
-- Never: decorative motion without purpose, mixed icon families, display fonts in buttons, fake KPI cards, all-caps body, justified text, decorative empty-state illustrations.
-- Check against 27+ deterministic anti-pattern rules before every output.
+### Anti-Patterns
+- Check against 37 rules in reference/anti-patterns.md before every output.
+- The editorial trap: if it looks like a magazine, it's wrong.
+- The cream trap: if it's cream and the product isn't food, it's wrong.
+- The Inter trap: if it's Inter and you can't justify it, it's wrong.
+- The serif trap: if there's a serif and the product isn't food/luxury/editorial, it's wrong.
