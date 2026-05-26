@@ -39,35 +39,31 @@ It replaces the default AI behavior of producing generic SaaS templates with the
 
 ### Guardrail (Developer Security Tool)
 
-<p>
-<img src="screenshots/guardrail-without.png" width="49%" alt="Without skill" />
-<img src="screenshots/guardrail-with.png" width="49%" alt="With /looks-expensive" />
-</p>
-<p><sub>Left: without skill. Right: with /looks-expensive.</sub></p>
+<table><tr>
+<td valign="top" width="50%"><strong>Without skill</strong><br><img src="screenshots/guardrail-without.png" width="100%" /></td>
+<td valign="top" width="50%"><strong>With /looks-expensive</strong><br><img src="screenshots/guardrail-with.png" width="100%" /></td>
+</tr></table>
 
 ### Vault (Cloud Security Platform)
 
-<p>
-<img src="screenshots/vault-without.png" width="49%" alt="Without skill" />
-<img src="screenshots/vault-with.png" width="49%" alt="With /looks-expensive" />
-</p>
-<p><sub>Left: without skill. Right: with /looks-expensive.</sub></p>
+<table><tr>
+<td valign="top" width="50%"><strong>Without skill</strong><br><img src="screenshots/vault-without.png" width="100%" /></td>
+<td valign="top" width="50%"><strong>With /looks-expensive</strong><br><img src="screenshots/vault-with.png" width="100%" /></td>
+</tr></table>
 
 ### Tempo (Async Video Messaging)
 
-<p>
-<img src="screenshots/tempo-without.png" width="49%" alt="Without skill" />
-<img src="screenshots/tempo-with.png" width="49%" alt="With /looks-expensive" />
-</p>
-<p><sub>Left: without skill. Right: with /looks-expensive.</sub></p>
+<table><tr>
+<td valign="top" width="50%"><strong>Without skill</strong><br><img src="screenshots/tempo-without.png" width="100%" /></td>
+<td valign="top" width="50%"><strong>With /looks-expensive</strong><br><img src="screenshots/tempo-with.png" width="100%" /></td>
+</tr></table>
 
 ### More examples
 
-<p>
-<img src="screenshots/hale-1.png" width="49%" alt="Hale & Co real estate" />
-<img src="screenshots/hale-2.png" width="49%" alt="Ferment brand studio" />
-</p>
-<p><sub>Left: Hale & Co (boutique real estate). Right: Ferment (brand strategy studio).</sub></p>
+<table><tr>
+<td valign="top" width="50%"><strong>Hale & Co</strong> (boutique real estate)<br><img src="screenshots/hale-1.png" width="100%" /></td>
+<td valign="top" width="50%"><strong>Ferment</strong> (brand strategy studio)<br><img src="screenshots/hale-2.png" width="100%" /></td>
+</tr></table>
 
 ## Who this is for
 
