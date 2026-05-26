@@ -52,10 +52,12 @@ Ask these questions. Do not proceed until answered:
 5. **What are you NOT?** 3-4 anti-references.
 6. **2-3 products whose quality you want to match.**
 7. **Emotional temperature?**
-   - Cool/Technical: precision, security, dev tools, fintech
-   - Warm/Human: hospitality, food, wellness, studios
-   - Neutral/Clean: general SaaS, productivity, B2B
-   - Bold/Energetic: consumer apps, creative tools, marketplaces
+   - Cool/Technical: precision, security, dev tools, fintech (blue-blacks, cool whites, slate)
+   - Warm/Earthy: food, wellness, hospitality, agriculture (cream, olive, terracotta)
+   - Neutral/Clean: general SaaS, productivity, B2B, most agencies (true grays, pure whites, no tint)
+   - Bold/High-Contrast: consumer apps, creative tools, marketplaces (pure black + white + one saturated accent)
+   - Editorial/Refined: architecture, real estate, luxury, consulting (warm grays, not cream. Stone, not paper.)
+   - Vibrant/Playful: social, education, kids, community (bright accents on white, colorful but controlled)
 8. **Constraints?** Timeline, team size, existing code.
 
 ### Output
@@ -99,9 +101,11 @@ The font is a product decision. Not a preset.
 
 **Temperature-to-type mapping (starting point):**
 - Cool/Technical: geometric sans, clean grotesk. Tight tracking. (Space Grotesk, Outfit, DM Sans, Instrument Sans, Geist)
-- Warm/Human: humanist sans or serif. Open apertures. (Bricolage Grotesque, Source Serif 4, Literata, Newsreader)
+- Warm/Earthy: humanist sans or serif. Open apertures. (Bricolage Grotesque, Source Serif 4, Literata, Newsreader)
 - Neutral/Clean: neo-grotesk or humanist-geometric. (Satoshi, General Sans, Albert Sans, Sora, Plus Jakarta Sans)
-- Bold/Energetic: display fonts with personality. (Cabinet Grotesk, Clash Display, Space Mono for accents)
+- Bold/High-Contrast: display fonts with personality. Strong weight contrast. (Cabinet Grotesk, Clash Display, Bebas Neue)
+- Editorial/Refined: transitional serif or elegant grotesk. Restrained, not decorative. (Libre Baskerville, Cormorant, Outfit, Switzer)
+- Vibrant/Playful: rounded geometric or friendly sans. (Nunito, Quicksand, Rubik, Comfortaa)
 
 **Selection process:**
 1. Start with temperature mapping
@@ -137,17 +141,30 @@ Eyebrow: [font] [10-12px] / 500 / [0.12-0.16em] / 1.3 / uppercase
 
 **Temperature-to-palette (from Phase 1):**
 
-| Temperature | Ink | Paper | Neutral tint |
-|-------------|-----|-------|--------------|
-| Cool | `#0f1114` (blue-black) | `#f7f8fa` (cool white) | Blue/slate undertone |
-| Warm | `#1a1714` (brown-black) | `#f5f2ec` (cream) | Amber/ochre undertone |
-| Neutral | `#111111` (true black) | `#fafafa` (true white) | No tint, pure gray |
-| Bold | `#0a0a0a` (deep black) | `#ffffff` (pure white) | High contrast, clean |
+| Temperature | Ink | Paper | Neutral tint | Accent direction |
+|-------------|-----|-------|--------------|-----------------|
+| Cool | `#0f1114` (blue-black) | `#f7f8fa` (cool white) | Blue/slate | Blue, teal, green, violet |
+| Warm/Earthy | `#1a1714` (brown-black) | `#f5f2ec` (cream) | Amber/ochre | Terracotta, olive, burnt orange |
+| Neutral | `#111111` (true black) | `#fafafa` (true white) | None, pure gray | Any single accent |
+| Bold | `#0a0a0a` (deep black) | `#ffffff` (pure white) | None, max contrast | One saturated primary |
+| Editorial | `#1c1c1c` (charcoal) | `#f5f5f3` (warm gray, NOT cream) | Warm GRAY not brown | Muted red, deep navy, forest |
+| Vibrant | `#1a1a1a` (near-black) | `#ffffff` (pure white) | Clean, no tint | Bright, saturated, playful |
 
-Do NOT default to warm. Match temperature to product.
+Do NOT default to warm. Do NOT default to cream. Match temperature to product.
+
+**THE CREAM/BROWN TRAP (CRITICAL):**
+The #1 failure of this skill is defaulting to cream paper (`#f5f2ec`) and brown-black ink (`#1a1714`) for everything. This makes every output look identical.
+
+Before selecting colors, ask:
+- Is this product ACTUALLY warm? Food, hospitality, agriculture: yes. Real estate, agencies, consulting, professional services: NO. Use Editorial (warm gray) or Neutral (true white).
+- Can you justify cream over white or gray? "It feels premium" is NOT a justification. White + a strong accent is equally premium.
+- Cream/brown is ONLY for: food, beverage, hospitality, wellness, agriculture, artisanal goods. Products where warmth is the identity, not a visual default.
+- If your last 3 outputs used cream + brown, you MUST pick a different base this time.
 
 **ANTI-REPETITION (CRITICAL):**
-Before selecting colors, check: are these the same warm off-whites and dark browns as every other project? If yes, STOP. Derive from the product's temperature.
+- Paper should NOT always be cream. Most products work better with white or gray.
+- Ink should NOT always be warm brown. Most products work better with true black or charcoal.
+- Accent colors derived from the product's identity, not a default palette.
 
 **Brand accent is mandatory.** Every product has a primary color. It is rarely just black and white. The accent must:
 - Pop on CTAs and primary buttons

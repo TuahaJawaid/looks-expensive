@@ -61,6 +61,14 @@ It replaces the default AI behavior of producing generic SaaS templates with the
 </p>
 <p><sub>Left: without skill. Right: with /looks-expensive.</sub></p>
 
+### More examples
+
+<p>
+<img src="screenshots/hale-1.png" width="49%" alt="Hale & Co real estate" />
+<img src="screenshots/hale-2.png" width="49%" alt="Ferment brand studio" />
+</p>
+<p><sub>Left: Hale & Co (boutique real estate). Right: Ferment (brand strategy studio).</sub></p>
+
 ## Who this is for
 
 - Solo founders building landing pages without a designer
