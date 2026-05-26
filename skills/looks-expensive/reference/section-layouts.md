@@ -3,11 +3,14 @@
 15 patterns. Use at least 3 per page. Never the same pattern twice in a row.
 
 ## 1. Bento Grid
-Mixed-size modular cards. Large hero card (3-4 cols x 2 rows) beside smaller cards.
-- Grid: 6-8 column base, varied spans
+Mixed-size modular cards with DIFFERENT dimensions. See `reference/bento-grids.md` for 5 exact CSS patterns.
+- MUST have at least one card using `grid-column: span 2` or `grid-row: span 2`
+- MUST have at least 2 different card sizes
+- Large cards MUST contain embedded visuals (CSS mockup, chart, code block) — not empty gradients
 - Gap: 16-24px
 - Best for: features, capabilities, integrations
 - Why it works: eye follows visual weight, not monotonous scanning
+- **Anti-pattern: equal-column grid labeled `.bento-grid` — if no card spans, it's NOT a bento**
 
 ## 2. Asymmetric Split (Large Left + Stacked Right)
 One large element (55-65%) beside 2-3 stacked smaller elements (35-45%).

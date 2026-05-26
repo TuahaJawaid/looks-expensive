@@ -2,7 +2,7 @@
 
 ## Three Tiers
 
-### Essential (Required on every page)
+### Essential (Minimum 3 of these 5 required — fade-up alone does NOT pass)
 
 **1. Button Hover: Lift + Shadow Expansion**
 ```css
@@ -96,6 +96,18 @@ Buttons appear to pull toward cursor when nearby.
 - Spring-like physics, 200-400ms follow
 - DISABLE on touch devices
 - Implementation: JS mouse tracking + requestAnimationFrame
+
+## Variety Requirement
+
+Every page MUST implement at least 3 different animation types from the Essential tier. "Fade-up on scroll" is ONE animation. You need at least two more from: button hover, staggered reveal (with visible per-item delay), counter animation, or smooth state transitions.
+
+Additionally, every page MUST include at least one animation beyond the generic IntersectionObserver fade-up. Good options:
+- Counter animation on stat numbers (count from 0 to final value)
+- Staggered card entrance with visible delay differences (100-150ms between items)
+- A domain-specific keyframe animation (pulsing dots for real-time data, waveform bars for audio, route lines for logistics, ripple for water, circuit nodes for tech)
+- Hover state that changes more than just translateY (border-color change, background fill, icon rotation, shadow glow)
+
+The same IntersectionObserver + translateY(24px) + cubic-bezier(0.16, 1, 0.3, 1) appearing on every element is a template fingerprint. Vary the distances (16px for small elements, 32px for large), vary the timing (400ms for cards, 800ms for hero), and vary the easing per element type.
 
 ## Global Rules
 

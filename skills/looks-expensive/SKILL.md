@@ -1,12 +1,12 @@
 ---
 name: looks-expensive
-version: 3.0.0
+version: 4.0.0
 description: |
   Full-stack design methodology that makes any website look like a $150k agency build.
   Nine gated phases: positioning, research, design contract, screen spec, build,
   subtraction, audit, hardening, handoff. Includes illustration system, animation
   tiers, 12 hero patterns, 15 section layouts, UX writing guide, icon system, and
-  37+ anti-pattern rules. One skill, zero external dependencies.
+  47 anti-pattern rules, bento grid patterns, CSS mockup library. One skill, zero external dependencies.
   Trigger on: "design this", "make this look expensive", "looks expensive",
   "full design pass", "design from scratch", "premium design", "redesign this".
 user-invocable: true
@@ -116,12 +116,13 @@ Direction label, decoration level, mood sentence, anti-references.
 
 Linear uses Inter. Eleven Labs uses a custom sans. Cursor uses a custom sans. Mercury uses a clean grotesk. Vercel uses Geist. Stripe uses a clean sans. None of them pair serif + sans. None of them use a display serif. The default is one sans family for everything.
 
-**Serif is the rare exception.** Serif is ONLY allowed when ALL of these are true:
-1. The product is food, beverage, luxury goods, or editorial publishing
-2. The user specifically named a serif-using product as a reference
-3. Sans alone genuinely cannot carry the brand
+**Serif is the rare exception.** Serif is ONLY allowed when BOTH of these are true:
+1. The product is food, beverage, luxury goods, hospitality, or editorial publishing
+2. The emotional temperature is Warm/Earthy
 
-If ANY condition isn't met, use all-sans. A real estate firm: sans. An agency: sans. A clinic: sans. A SaaS tool: sans. A marketplace: sans.
+When both conditions are met, serif headings (H1, H2) paired with a sans-serif body are ALLOWED without the user specifically requesting it. Use a modern serif (e.g., Cormorant, Playfair Display, Lora, Libre Baskerville, Fraunces) for display headings only. Body text stays sans-serif.
+
+If EITHER condition isn't met, use all-sans. An agency: sans. A clinic: sans. A SaaS tool: sans. A marketplace: sans. A real estate firm (Neutral temperature): sans.
 
 **INTER IS BANNED AS THE DEFAULT.** Inter appeared in 8 of 11 test outputs. It is a fine font but using it on every project makes every output identical. You MUST select a different sans-serif for each project. Before choosing, list 5 candidates and pick the best match.
 
@@ -197,6 +198,7 @@ Define:
 - Elevation through lightness, not heavy shadow
 - No gradients unless user asks
 - Accent color must be VISIBLE
+- **ACCENT VISIBILITY:** The accent color MUST be visually distinguishable from the ink color at arm's length. Slate (#334155), gray (#475569, #64748B), dark navy (#1B2838), and near-black (#171717) are NOT accent colors — they're ink variants. If the accent hex starts with #1-#5 and the ink is #0a0a0a, the difference is too subtle. Pick a real color with a different hue.
 
 ### Spacing
 - Base unit: 4px or 8px
@@ -263,7 +265,7 @@ Write complete DESIGN.md. Present. STOP. Wait for approval.
 
 ## Phase 4: Screen Specification
 
-Load reference files: `reference/hero-patterns.md`, `reference/section-layouts.md`, `reference/illustrations.md`
+Load reference files: `reference/hero-patterns.md`, `reference/section-layouts.md`, `reference/illustrations.md`, `reference/bento-grids.md`, `reference/css-mockups.md`
 
 ### Per-Screen Spec
 
@@ -296,24 +298,38 @@ Write the spec. Present. STOP. Wait for approval.
 
 ## Phase 5: Implementation
 
-Load reference files: `reference/animations.md`, `reference/icon-system.md`, `reference/anti-patterns.md`
+Load reference files: `reference/animations.md`, `reference/icon-system.md`, `reference/anti-patterns.md`, `reference/bento-grids.md`, `reference/css-mockups.md`
 
 ### Build Rules
 
-**Color must be visible.** Accent on CTAs, links, hover states, at least one tinted section.
+**Color must be visible.** Accent on CTAs, links, hover states, at least one tinted section. The accent must be visually distinguishable from body text — no gray, slate, or near-black accents.
 
 **Sections must look different.** Different background, layout, density, or type scale. At least 2 dimensions different between adjacent sections.
 
-**Illustrations must respect the medium.** Follow `reference/illustrations.md`. NEVER render physical products, landscapes, or realistic objects in SVG/CSS. Typography beats bad illustration.
+**Illustrations must respect the medium.** Follow `reference/illustrations.md`. NEVER render physical products, landscapes, or realistic objects in SVG/CSS. Typography beats bad illustration. For section visuals, use CSS mockup patterns from `reference/css-mockups.md` — not empty gradient rectangles.
 
-**Animations are required.** Essential tier minimum: button hover lift, scroll entrance, staggered reveals, counter animation, smooth state transitions.
+**Bento grids must be real.** Follow `reference/bento-grids.md`. If you use the class name `.bento-grid`, at least one card MUST span multiple columns or rows. Equal-column grids are NOT bento. Large bento cards MUST contain embedded visuals (mockup, chart, code block), not empty gradients.
+
+**Animations require variety.** Essential tier minimum: at least 3 of the 5 Essential animation types. Fade-up alone does NOT pass. Add counter animations on stats, staggered reveals with visible per-item delay, and at least one domain-specific keyframe animation. Vary the translateY distances and timing per element type.
+
+**No browser chrome.** No red/yellow/green dots on ANY element — code blocks, dashboards, mockups, or anything else. This is the #1 AI design tell. Use a thin accent line or subtle border instead.
+
+**Mobile menu must work.** Every site must include a working hamburger toggle for the mobile nav. Hidden nav links with no way to show them is a broken site.
 
 **No editorial patterns as defaults.** Specifically:
-- No `.serif` class unless serif was explicitly earned in Phase 3
-- No uppercase letter-spaced eyebrows on every section. Use sparingly.
+- No `.serif` class unless serif was earned in Phase 3 (Warm/Earthy temperature + food/bev/luxury/hospitality)
+- No uppercase letter-spaced eyebrows on every section. Use sparingly (max 2-3 per page).
 - No `.h-display` with a font different from body
 - No warm CSS variable naming (`--paper`, `--night`, `--night-copy`). Use neutral names (`--bg`, `--bg-2`, `--text`, `--text-2`, `--accent`).
 - No editorial pull quote styling unless the product is editorial
+
+**No template skeleton.** Do not build every page as: centered hero → 3-card grid → 3-step process → stats → testimonial → CTA → footer. Rearrange, merge, or replace at least 2 sections with different patterns from `reference/section-layouts.md`. If the page follows this exact structure, go back and redesign.
+
+**Dark sites need contrast.** If the site is dark-themed, include at least one light-background section (white or light gray). The difference between #0a0a0a, #111, and #1a1a1a is not visible enough to create section distinction.
+
+**No zero-padded step numbers.** Use 1, 2, 3 for process steps. Never 01, 02, 03. Zero-padding is an AI design tell.
+
+**Testimonials must not use banned names.** See `reference/ux-writing.md` for the banned name list. Generate names from the product's actual target audience demographic and geography. Never use gradient circles as avatars — use initials in a colored circle or omit the avatar.
 
 ### Pre-Output Checklist
 
@@ -326,19 +342,26 @@ Before presenting ANY screen:
 - [ ] **MONO CHECK:** Grep for `monospace`, `mono`, `<code>`, `<pre>`. Remove unless product needs it.
 - [ ] **GRADIENT CHECK:** Grep for `gradient`. Remove unless user requested.
 - [ ] **SECTION NUMBER CHECK:** Grep for "Section", "01.", "02.", "---". Remove.
-- [ ] **BROWSER CHROME CHECK:** Grep for mock window buttons. Remove unless showing real product UI.
-- [ ] **ILLUSTRATION QUALITY CHECK:** Review every SVG. If it looks amateur, remove and use typography.
+- [ ] **BROWSER CHROME CHECK:** Grep for red/yellow/green dots, `.dot`, `#ef4444`/`#eab308`/`#22c55e` triplets. Remove ALL of them. No exceptions.
+- [ ] **ILLUSTRATION QUALITY CHECK:** Review every SVG. If it looks amateur, remove and use typography or a CSS mockup from reference/css-mockups.md.
 - [ ] **EYEBROW SPAM CHECK:** Are uppercase letter-spaced labels on every section? If more than 3 sections have them, remove the excess. They're for navigation context, not decoration.
-- [ ] Font: one sans family, hierarchy through weight + size
+- [ ] Font: one sans family (or serif headings + sans body if Warm/Earthy food/luxury), hierarchy through weight + size
 - [ ] Color tokens used everywhere
+- [ ] **ACCENT CHECK:** Is the accent visually distinct from the ink? If both are dark (#1-#5 hex range), pick a real color with a different hue.
 - [ ] Accent color VISIBLE on CTAs, links, at least one tinted section
 - [ ] Spacing follows scale
 - [ ] Border radius uses 4-32 system
 - [ ] All transitions use custom cubic-bezier
 - [ ] At least 3 different section layout patterns
 - [ ] No 2 consecutive sections with same background
-- [ ] At least one dark-inverted section
-- [ ] Essential animations implemented
+- [ ] At least one dark-inverted section (or one light section if site is dark-themed)
+- [ ] **ANIMATION VARIETY CHECK:** At least 3 different Essential-tier animation types. Fade-up alone doesn't pass. Add counter animation and staggered reveals at minimum.
+- [ ] **BENTO CHECK:** If `.bento-grid` exists, does at least one card span multiple cols/rows? Equal-size grids are NOT bento.
+- [ ] **MOCKUP CHECK:** Are there empty gradient rectangles where visuals should be? Replace with CSS mockups from reference/css-mockups.md.
+- [ ] **TESTIMONIAL CHECK:** Any banned names (Sarah Chen, Marcus T., Priya S., Maria Santos)? Any gradient-circle avatars? Fix both.
+- [ ] **ZERO-PAD CHECK:** Any "01.", "02.", "03." decorative numbers? Change to 1, 2, 3.
+- [ ] **MOBILE MENU CHECK:** Does the hamburger toggle have working JS? Hidden nav with no toggle = broken site.
+- [ ] **SKELETON CHECK:** Is the page exactly: hero → 3-cards → steps → stats → testimonial → CTA? Rearrange at least 2 sections.
 - [ ] Icon stroke weight 0.8-1px, one family
 - [ ] Responsive at all 6 breakpoints
 - [ ] Touch targets 44px minimum
@@ -462,7 +485,7 @@ The output should look like Linear, Vercel, Stripe, Mercury, Eleven Labs, or Cur
 - 64-120px between major sections.
 
 ### Typography
-- ONE sans-serif family by default. Serif only when earned.
+- ONE sans-serif family by default. Serif headings allowed on Warm/Earthy food/bev/luxury/hospitality.
 - NO Inter as default. Must be justified.
 - NO italics. Period.
 - NO monospace unless product needs it.
@@ -470,21 +493,25 @@ The output should look like Linear, Vercel, Stripe, Mercury, Eleven Labs, or Cur
 - Labels/eyebrows used sparingly, not on every section.
 
 ### Animation
-- Essential tier mandatory.
+- Essential tier mandatory: at least 3 of 5 Essential types. Fade-up alone doesn't pass.
 - Custom cubic-bezier. Never linear or default ease.
+- Vary translateY distances and timing per element type. No identical animation on every element.
 - GPU-safe: transform and opacity only.
 - `prefers-reduced-motion` always respected.
 
 ### Illustration
 - Respect the medium. No physical product renders in HTML/CSS.
 - Typography beats bad illustration.
-- No fake browser chrome.
+- No fake browser chrome (red/yellow/green dots). EVER. No exceptions.
+- Use CSS mockups from reference/css-mockups.md for section visuals. No empty gradient rectangles.
 
 ### Layout
 - 15 section layout patterns available. Use at least 3 per page.
 - Never same layout twice in a row.
 - Never 2 consecutive sections with same background.
-- At least one dark section per page.
+- At least one dark section per page. If the site is dark-themed, at least one light section.
+- Bento grids MUST have cards of different sizes with spanning. See reference/bento-grids.md.
+- Do not follow the default template skeleton on every page. Vary the section order.
 
 ### UX Writing
 - Short. Specific. No banned words. No generic CTAs.
@@ -505,8 +532,13 @@ The output should look like Linear, Vercel, Stripe, Mercury, Eleven Labs, or Cur
 - Keyboard nav. Skip link. Alt text. Heading hierarchy.
 
 ### Anti-Patterns
-- Check against 37 rules in reference/anti-patterns.md before every output.
+- Check against 47 rules in reference/anti-patterns.md before every output.
 - The editorial trap: if it looks like a magazine, it's wrong.
 - The cream trap: if it's cream and the product isn't food, it's wrong.
 - The Inter trap: if it's Inter and you can't justify it, it's wrong.
-- The serif trap: if there's a serif and the product isn't food/luxury/editorial, it's wrong.
+- The serif trap: if there's a serif and the product isn't Warm/Earthy food/luxury/hospitality, it's wrong.
+- The bento trap: if all bento cards are equal size, it's not a bento.
+- The browser chrome trap: red/yellow/green dots on anything = instant AI tell. Remove.
+- The gray accent trap: if the accent looks like the ink, it's not an accent.
+- The gradient blob trap: empty gradient rectangles where visuals should be = lazy. Use CSS mockups.
+- The skeleton trap: if every page follows the same section order, the skill looks like a template.

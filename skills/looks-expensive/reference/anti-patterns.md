@@ -1,6 +1,6 @@
 # Anti-Pattern Detection Rules
 
-27 deterministic checks. Run before every output.
+47 deterministic checks. Run before every output.
 
 ## Visual Anti-Patterns
 
@@ -14,7 +14,7 @@
 8. **Oversaturated accent colors.** Neon-bright blues, purples, greens that vibrate against backgrounds.
 9. **Heavy drop shadows.** `shadow-md`, `shadow-lg`, `rgba(0,0,0,0.3)+`. Use hairline elevation only.
 10. **1px solid gray borders everywhere.** The "I didn't design this" tell. Use rgba opacity hairlines.
-11. **Mac window chrome (red/yellow/green dots)** on code blocks or illustrations that aren't actual product UI.
+11. **Mac window chrome (red/yellow/green dots)** on ANY element. Code blocks, dashboards, mockups — no exceptions. Use a thin accent line or subtle border instead.
 12. **Stock photo imagery.** Generic business people, handshakes, abstract office scenes.
 13. **Symmetrical 3-column Bootstrap grid** with no whitespace variation, no size variation, identical cards.
 14. **Decorative gradient mesh backgrounds** with no purpose beyond "looking techy."
@@ -54,9 +54,22 @@
 36. **"Get Started" on every CTA.** Buttons must describe the specific action.
 37. **Emotionless, generic testimonial text.** Fake-sounding quotes with no specificity.
 
+## Structural Anti-Patterns
+
+38. **Fake bento grid.** A grid labeled `.bento-grid` where all cards are equal size with no `grid-column: span` or `grid-row: span`. If no card spans, rename the class and admit it's a regular grid — or add real spanning per reference/bento-grids.md.
+39. **Same animation on every element.** If the only animation is `translateY(24px)` fade-in on scroll, you haven't met Essential tier. Add at least one more type: counter animation, staggered reveal with different timing, horizontal slide, clip-path reveal, or a domain-specific keyframe animation.
+40. **Identical page skeleton.** If your page follows: centered hero → 3-card grid → 3-step process → 4-col stats → testimonial → CTA → footer — you used the default template. Rearrange, merge, or replace at least 2 sections with different patterns from reference/section-layouts.md.
+41. **Gray or near-black accent color.** If the accent hex is #1-#5 range (e.g., #1B2838, #334155, #475569, #64748B, #171717), it's not an accent — it's ink. Accents must be visually distinguishable from body text at arm's length. Minimum: the accent hue should differ from the ink by at least 30 degrees on the color wheel.
+42. **Gradient rectangle placeholder.** A colored gradient rectangle where a product visual should be. Use a CSS mockup from reference/css-mockups.md instead. If the product is physical, use an editorial typography treatment or a styled placeholder with label — not an anonymous gradient blob.
+43. **Reused testimonial names.** Never use: Sarah Chen, Marcus T., Priya S., Maria Santos, Elena, Jordan K., Alex Rivera, Jamie, David & Laura. These names appear in AI-generated content constantly. Generate names from the product's actual target audience demographic and geography.
+44. **Zero-padded decorative numbers.** "01.", "02.", "03." as section labels or step indicators. Use plain numbers (1, 2, 3) for process steps. Never zero-pad. Zero-padding is an AI design tell.
+45. **All-dark site with no light section.** If the entire page is dark-themed, include at least one light-background section (white or light gray) for contrast. The difference between #0a0a0a and #1a1a1a is not visible enough to create section distinction.
+46. **Mobile nav without toggle.** Hiding nav links on mobile with `display: none` but providing no hamburger toggle JS. Every responsive site must have a working mobile menu.
+47. **Universal 5-star testimonials.** Every testimonial at 5 stars with no variation. Real products have 4.5-4.8 star averages. Mix in a 4-star review or drop the stars entirely.
+
 ## How to Use
 
-Before presenting any output, check against ALL 37 rules. For each violation found:
+Before presenting any output, check against ALL 47 rules. For each violation found:
 - Classify: Certain (obvious match) / Probable (likely match) / Possible (might match)
 - Fix immediately if Certain or Probable
 - Flag for user review if Possible

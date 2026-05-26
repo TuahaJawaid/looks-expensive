@@ -97,6 +97,25 @@ Bad: "Section 01", "--- Features ---", "01.", "02.", "Chapter 1", "Part One"
 
 No decorative numbering. No dashes as decoration. No dates unless the content is actually dated.
 
+## Testimonial & Social Proof Rules
+
+**Banned testimonial names** (these appear in AI-generated content constantly):
+Sarah Chen, Marcus T., Marcus Chen, Priya S., Priya Sharma, Priya Patel, Maria Santos, Elena (any), Jordan K., Alex Rivera, Jamie (any), David & Laura, David & Rachel, Aisha (any), Jess L.
+
+Instead: generate names that match the product's actual audience demographic and geography. A construction PM tool should have names common in the construction industry. A pet insurance app should have names that feel like real pet owners in the target market.
+
+**Testimonial avatar:** Never use a gradient circle as an avatar placeholder. Either use initials in a colored circle (e.g., "SC" in a brand-colored circle) or omit the avatar entirely. Gradient circles are an AI design tell.
+
+**Star ratings:** Never give every testimonial 5 stars. Real products have 4.5-4.8 averages. Either use a mix (one 4-star, two 5-star) or drop star ratings entirely and let the quote speak.
+
+**Company names in testimonials:** If the company is fictional, make it sound real — not like AI naming (avoid: "Vantage Corp", "NexGen", "TechForward", "InnovateCo"). Use mundane, specific names: "Ridgeline Builders", "Coastal Freight Partners", "Birch Lane Dental."
+
+**Alternative social proof patterns** (often better than individual testimonials):
+- Logo cloud with real or realistic company names as text (not gray placeholder boxes)
+- Stat-based proof: "Trusted by 340 teams" or "Processing $2.1B annually"
+- Review aggregation: "4.8 on G2 from 1,200 reviews" with link
+- Case study snippet: one specific result with company name and metric
+
 ## Conciseness Audit
 
 Before any copy ships, check:

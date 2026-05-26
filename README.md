@@ -10,6 +10,8 @@ Works with **Claude Code**, **Cursor**, and **Codex**.
 
 It replaces the default AI behavior of producing generic SaaS templates with the same warm brown palette, three identical cards in a row, and "Get Started" on every button.
 
+**v4.0** — tested against 50 generated sites. Fixes fake bento grids, animation monotony, template skeleton repetition, gradient placeholder blobs, reused AI testimonial names, invisible accent colors, browser chrome dots, and zero-padded decorative numbers. Adds 2 new reference files (bento grid patterns, CSS mockup library) and 10 new anti-pattern checks.
+
 **Nine phases:**
 
 1. **Position** - Product interview. Establishes the taste filter before any visual work.
@@ -30,8 +32,10 @@ It replaces the default AI behavior of producing generic SaaS templates with the
 | `section-layouts.md` | 15 layout patterns beyond "3 cards in a row" (bento grids, zigzag, asymmetric splits, timelines, etc.) |
 | `animations.md` | 3-tier animation system (Essential/Elevated/Advanced) with timing values and easing curves |
 | `illustrations.md` | 8 illustration types with integration rules and anti-patterns |
-| `ux-writing.md` | Banned words, character limits per element, headline formulas, CTA rules |
-| `anti-patterns.md` | 37 deterministic checks run before every output |
+| `ux-writing.md` | Banned words, character limits per element, headline formulas, CTA rules, testimonial name bans |
+| `bento-grids.md` | 5 bento grid patterns with exact CSS — minimum spanning requirements and anti-patterns |
+| `css-mockups.md` | 8 CSS mockup patterns for section visuals (dashboards, app screens, funnels, code blocks) |
+| `anti-patterns.md` | 47 deterministic checks run before every output |
 | `icon-system.md` | Outlined icons, 0.8-1px stroke, sizing tiers, library recommendations |
 | `border-radius.md` | 4-32px system with element-to-token mappings |
 
@@ -122,7 +126,7 @@ You can also run it on an existing project to audit and improve the design.
 - **/looks-expensive** has an anti-repetition system that prevents the AI from producing the same palette, fonts, and layouts across different projects.
 - **/looks-expensive** packages UX writing rules, 15 section layouts, 12 hero patterns, and an illustration system into reference files loaded per-phase.
 
-The 37 anti-pattern rules are extracted from impeccable's detection system and expanded with additional checks.
+The 47 anti-pattern rules are extracted from impeccable's detection system and expanded with additional checks found during a 50-site stress test.
 
 ## What inspired this
 
@@ -143,21 +147,27 @@ The skills that shaped the methodology:
 - **Accent color must be visible.** On CTAs, pills, icons, and at least one tinted section. Not buried in a hover state.
 - **UX writing has rules.** Headline: 6-10 words. CTA: 2-5 words. No "Get Started" on every button. No "revolutionary" or "cutting-edge."
 - **Typography is a product decision.** The font is derived from the product's emotional temperature and audience, not picked from a default.
+- **Bento grids must actually be bento.** If all cards are the same size, it's a regular grid. Real bento has cards spanning multiple columns or rows.
+- **No browser chrome dots.** Red/yellow/green fake macOS window buttons are the #1 AI design tell. Banned everywhere.
+- **CSS mockups over gradient blobs.** Section visuals should be product-relevant mockups (dashboards, code blocks, funnels), not anonymous gradient rectangles.
+- **Accent colors must be visible.** Gray, slate, and near-black are not accent colors. If you can't distinguish the accent from the ink, pick a real color.
 
 ## File structure
 
 ```
 skills/looks-expensive/
-  SKILL.md                  # Main skill (540 lines) - phases, gates, checklists, laws
+  SKILL.md                  # Main skill (v4.0.0) - phases, gates, checklists, laws
   reference/
-    animations.md           # 3-tier animation system with timing and easing
-    anti-patterns.md        # 37 deterministic anti-pattern checks
+    animations.md           # 3-tier animation system with variety requirements
+    anti-patterns.md        # 47 deterministic anti-pattern checks
+    bento-grids.md          # 5 bento patterns with exact CSS and spanning rules
     border-radius.md        # 4-32px system with element mappings
+    css-mockups.md          # 8 CSS mockup patterns for section visuals
     hero-patterns.md        # 12 hero patterns with product-type selection
     icon-system.md          # Outlined, 0.8-1px stroke, sizing tiers
     illustrations.md        # 8 illustration types with rules
     section-layouts.md      # 15 layouts beyond "3 cards in a row"
-    ux-writing.md           # Banned words, char limits, frameworks
+    ux-writing.md           # Banned words, char limits, testimonial name bans
 ```
 
 ## Contributing

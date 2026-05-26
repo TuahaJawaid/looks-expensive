@@ -57,7 +57,7 @@ Realistic product interfaces built in HTML.
 Beautified code presentations.
 - Syntax-highlighted code with brand-matched colors
 - Dark background, clean container, subtle border
-- NO mac window chrome (red/yellow/green dots) unless explicitly showing a terminal
+- **NO red/yellow/green browser chrome dots. EVER. No exceptions.** Use a thin accent-colored line at the top of the block, or just padding. Browser chrome dots are the #1 AI design tell.
 - When to use: developer tools, API products, infrastructure
 
 ### 3. Data Visualization
@@ -112,9 +112,10 @@ Honest, styled containers for content that requires real photography or design a
 3. NEVER attempt to render physical products (bottles, packaging, food, devices, clothing) in HTML/CSS/SVG. Use a placeholder or editorial typography treatment instead.
 4. NEVER attempt landscapes, nature scenes, buildings, or environmental illustrations.
 5. NEVER attempt human figures, faces, or hands.
-6. NO fake browser chrome (mac min/max/close dots) unless showing real product UI in a browser.
-7. NO monospace in illustrations unless displaying actual code.
-8. Illustrations use the brand accent color. Part of the design system.
-9. On dark sections, adapt (lighter strokes, on-dark accent).
-10. Mobile: simplify or remove. Never hide content, but visual accents can be reduced.
-11. When in doubt, leave it out. Typography and spacing create more visual richness than a forced illustration.
+6. **NO fake browser chrome (red/yellow/green dots). EVER. No exceptions.** Not on code blocks, dashboards, mockups, or anything else. Use a thin accent line or border instead. This is the #1 AI design tell.
+7. For rich section visuals, use patterns from `reference/css-mockups.md` — dashboards, app screens, data tables, funnels, comparison splits. These render cleanly and communicate the product.
+8. NO monospace in illustrations unless displaying actual code.
+9. Illustrations use the brand accent color. Part of the design system.
+10. On dark sections, adapt (lighter strokes, on-dark accent).
+11. Mobile: simplify or remove. Never hide content, but visual accents can be reduced.
+12. When in doubt, leave it out. Typography and spacing create more visual richness than a forced illustration.
