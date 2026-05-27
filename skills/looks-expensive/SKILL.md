@@ -308,9 +308,9 @@ Load reference files: `reference/animations.md`, `reference/icon-system.md`, `re
 
 **Illustrations must respect the medium.** Follow `reference/illustrations.md`. NEVER render physical products, landscapes, or realistic objects in SVG/CSS. Typography beats bad illustration. For section visuals, use CSS mockup patterns from `reference/css-mockups.md` — not empty gradient rectangles.
 
-**Bento grids must be real.** Follow `reference/bento-grids.md`. If you use the class name `.bento-grid`, at least one card MUST span multiple columns or rows. Equal-column grids are NOT bento. Large bento cards MUST contain embedded visuals (mockup, chart, code block), not empty gradients.
+**Bento grids must be real.** Follow `reference/bento-grids.md` — copy the CSS exactly. Large cards MUST span BOTH axes (`grid-column: span 2` AND `grid-row: span 2`). Use `grid-auto-rows: 1fr`, NEVER `grid-template-rows: auto auto`. Include THREE responsive breakpoints (desktop 3-col, tablet 2-col at 1024px, mobile 1-col at 768px). Check your card count fills the grid with no orphaned empty cells. Large bento cards MUST contain embedded visuals (mockup, chart, code block), not empty gradients.
 
-**Animations require variety.** Essential tier minimum: at least 3 of the 5 Essential animation types. Fade-up alone does NOT pass. Add counter animations on stats, staggered reveals with visible per-item delay, and at least one domain-specific keyframe animation. Vary the translateY distances and timing per element type.
+**Animations require variety.** Essential tier minimum: at least 3 of the 5 Essential animation types. Fade-up alone does NOT pass. Counter animation on stat numbers is MANDATORY if any stat/number section exists. Add staggered reveals with visible per-item delay, and at least one domain-specific keyframe animation. Vary the translateY distances and timing per element type. Before outputting, LIST which 3+ animation types you implemented — if you can only name "fade-up" and "hover lift", go back and add more.
 
 **No browser chrome.** No red/yellow/green dots on ANY element — code blocks, dashboards, mockups, or anything else. This is the #1 AI design tell. Use a thin accent line or subtle border instead.
 
@@ -355,8 +355,8 @@ Before presenting ANY screen:
 - [ ] At least 3 different section layout patterns
 - [ ] No 2 consecutive sections with same background
 - [ ] At least one dark-inverted section (or one light section if site is dark-themed)
-- [ ] **ANIMATION VARIETY CHECK:** At least 3 different Essential-tier animation types. Fade-up alone doesn't pass. Add counter animation and staggered reveals at minimum.
-- [ ] **BENTO CHECK:** If `.bento-grid` exists, does at least one card span multiple cols/rows? Equal-size grids are NOT bento.
+- [ ] **ANIMATION VARIETY CHECK:** LIST your 3+ animation types here: ___. If you can only name "fade-up" and "hover lift", go back. Counter animation is MANDATORY if stats exist.
+- [ ] **BENTO CHECK:** If `.bento-grid` exists: (a) does the large card span BOTH axes? (b) is `grid-auto-rows: 1fr` used, NOT `auto auto`? (c) are there 3 responsive breakpoints (1024px + 768px)? (d) does the card count fill the grid with no empty cells? (e) does the large card contain an embedded mockup?
 - [ ] **MOCKUP CHECK:** Are there empty gradient rectangles where visuals should be? Replace with CSS mockups from reference/css-mockups.md.
 - [ ] **TESTIMONIAL CHECK:** Any banned names (Sarah Chen, Marcus T., Priya S., Maria Santos)? Any gradient-circle avatars? Fix both.
 - [ ] **ZERO-PAD CHECK:** Any "01.", "02.", "03." decorative numbers? Change to 1, 2, 3.
